@@ -172,29 +172,6 @@ impl Renderer {
             frame_idx: 0,
         }
     }
-    // pub fn draw_frame_rg(&mut self) {
-
-    //     struct Asd {
-    //         a: u32
-    //     };
-    //     std::mem::size_of::<Asd>();
-
-    //     let rg = blick::RenderGraph::new();
-
-    //     let buffer_ref = rg.create_buffer(
-    //         blick::BufferDesc {
-    //             size: 4*4*3,
-    //             usage: blick::BufferUsage::STORAGE,
-    //         }
-    //     );
-
-    //     rg.add_compute_pass()
-    //         .pipeline(&self.compute_pipeline)
-    //         .descriptor_set(0, &self.descriptor_set)
-    //         .push_constants(0, &[0.0, 0.0, 0.0])
-    //         .dispatch(3, 1, 1);
-    // }
-
 
     pub fn draw_frame(&mut self) {
         let frame = match self.backend.begin_frame() {
@@ -240,20 +217,6 @@ impl Renderer {
         };
 
         self.command_buffer.begin();
-
-
-        // self.command_buffer.transition(
-        //     &[
-        //         blick::BufferBarrier {
-        //             buffer: &self.buffer,
-        //             src_access_mask: blick::AccessFlags::NONE,
-        //             dst_access_mask: blick::AccessFlags::SHADER_WRITE,
-        //         }
-        //     ],
-        //     &[],
-        //     blick::PipelineStageFlags::TOP_OF_PIPE,
-        //     blick::PipelineStageFlags::COMPUTE_SHADER,
-        // );
 
         let all_values: [[u32;3];3] = [
             [0, 0, 0],
