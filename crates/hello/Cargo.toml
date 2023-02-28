@@ -1,0 +1,9 @@
+[package]
+name = "hello"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+raw-window-handle = "0.5"
+winit = "0.27.3"
+blick = { path = "../blick" }
